@@ -45,9 +45,20 @@ class Bottom extends React.Component {
     )
   }
 }
+class Drawer extends React.Component {
+  render() {
+    return (
+      <View style={{ flexDirection: 'column',flex:1, justifyContent: 'space-evenly' }}>
+        <BottomItem title={"Page1"} href={"Page1"} img={{ local: require('./assets/images/p1.png') }} />
+        <BottomItem title={"Home"} href={"Home"} img={{ local: require('./assets/images/home.png') }} />
+        <BottomItem title={"Page2"} href={"Page2"} img={{ local: require('./assets/images/p2.png') }} />
+      </View >
+    )
+  }
+}
 
 const App = () => {
-  return <FrameX pages={pages} top={<Top />} bottom={<Bottom />} initialPageName={'Home'} />;
+  return <FrameX pages={pages} top={<Top />} bottom={<Bottom />} drawer={<Drawer />} initialPageName={'Home'} />;
 };
 
 
